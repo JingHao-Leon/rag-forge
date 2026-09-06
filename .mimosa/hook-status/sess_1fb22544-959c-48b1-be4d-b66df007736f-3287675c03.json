@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-09-06T13:01:42.900Z",
+  "sessionId": "sess_1fb22544-959c-48b1-be4d-b66df007736f",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "/Users/ahs/.zcode/workspace/default/ai-projects/lora-lab/examples/train_qwen_gpu.py",
+  "outcome": "inconclusive",
+  "coverage": "partial",
+  "findingCount": 0,
+  "durationMs": 5,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

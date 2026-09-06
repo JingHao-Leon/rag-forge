@@ -1,0 +1,10 @@
+{"query": "怎么减少大模型胡编乱造？检索外部知识", "relevant": ["d01"]}
+{"query": "怎么在一张消费级显卡上微调 7B 大模型", "relevant": ["d02"]}
+{"query": "vLLM 高吞吐靠什么缓存技术", "relevant": ["d03", "d16"]}
+{"query": "attention 里的 Q K V 是什么", "relevant": ["d04"]}
+{"query": "GPTQ 和 AWQ 这些压缩方法", "relevant": ["d05"]}
+{"query": "模型怎么调用外部工具完成任务 ReAct", "relevant": ["d06", "d07"]}
+{"query": "向量数据库用什么索引做近似搜索", "relevant": ["d08", "d09"]}
+{"query": "PPO 和 DPO 训练有什么区别", "relevant": ["d10"]}
+{"query": "怎么让模型一步步推理再回答", "relevant": ["d11"]}
+{"query": "小模型怎么学大模型的能力", "relevant": ["d19", "d20"]}
