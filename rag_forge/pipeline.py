@@ -27,6 +27,7 @@ class HybridPipeline:
     use_mmr: bool = False
     mmr_lambda: float = 0.7
     rerank_fn: object | None = None  # optional callable(query, candidates) -> [(doc_id, score)]
+    embedder: object | None = None   # pluggable dense embedder (default: offline hash)
     _chunks: list[Chunk] = field(default_factory=list, repr=False)
     _bm25: BM25Index | None = field(default=None, repr=False)
     _dense: DenseIndex | None = field(default=None, repr=False)
@@ -37,7 +38,7 @@ class HybridPipeline:
             self._chunks.extend(recursive_chunks(doc_id, text, self.chunk_size, self.chunk_overlap))
         corpus_chunks = {f"{c.doc_id}::{c.start}": c.text for c in self._chunks}
         self._bm25 = BM25Index().build(corpus_chunks)
-        self._dense = DenseIndex().build(corpus_chunks)
+        self._dense = DenseIndex(self.embedder).build(corpus_chunks)
         return self
 
     def _parse(self, chunk_key: str) -> str:

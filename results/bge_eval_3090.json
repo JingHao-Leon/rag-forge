@@ -1,0 +1,27 @@
+{
+  "embedder": "BAAI/bge-small-zh-v1.5",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "build_seconds": 231.5,
+  "bge_dense": {
+    "n_queries": 10,
+    "recall@1": 0.45,
+    "ndcg@1": 0.6,
+    "recall@3": 0.9,
+    "ndcg@3": 0.7761859507142915,
+    "recall@5": 0.9,
+    "ndcg@5": 0.7761859507142915,
+    "mrr@10": 0.7833333333333333,
+    "seconds": 0.66
+  },
+  "bge_hybrid": {
+    "n_queries": 10,
+    "recall@1": 0.8,
+    "ndcg@1": 1.0,
+    "recall@3": 0.9,
+    "ndcg@3": 0.9226294385530917,
+    "recall@5": 0.95,
+    "ndcg@5": 0.9463492098300212,
+    "mrr@10": 1.0,
+    "seconds": 0.55
+  }
+}

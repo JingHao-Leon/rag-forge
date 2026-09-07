@@ -102,6 +102,15 @@ def test_hybrid_beats_or_matches_single_retrievers_on_fixture(corpus):
     return metrics
 
 
+def test_pipeline_keeps_custom_embedder_after_build(corpus):
+    """Regression: build() used to clobber an injected dense embedder."""
+    from rag_forge.dense import HashEmbedder
+
+    custom = HashEmbedder(dim=128)
+    pipe = HybridPipeline(embedder=custom).build(corpus)
+    assert pipe._dense.embedder is custom
+
+
 def test_llm_reranker_adapter_reorders():
     rerank = make_llm_reranker(lambda q, texts: [2, 0, 1])
     out = rerank("q", [("a", "x"), ("b", "y"), ("c", "z")], top_k=3)

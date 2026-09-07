@@ -50,8 +50,7 @@ def main() -> None:
     out = {"embedder": "BAAI/bge-small-zh-v1.5", "gpu": torch.cuda.get_device_name(0)}
 
     t0 = time.time()
-    pipe = HybridPipeline()
-    pipe._dense = DenseIndex(SentenceTransformerEmbedder("BAAI/bge-small-zh-v1.5"))
+    pipe = HybridPipeline(embedder=SentenceTransformerEmbedder("BAAI/bge-small-zh-v1.5"))
     pipe.build(corpus)
     out["build_seconds"] = round(time.time() - t0, 1)
 
